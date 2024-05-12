@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, forwardRef } from '@angular/core';
 import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { ControlValueAccessorDirective } from '@lib/directives/control-value-accessor/control-value-accessor.directive';
+import { ControlValueAccessorDirective } from '@lib/directives';
 
 const modules = [CommonModule, FormsModule, ReactiveFormsModule];
 

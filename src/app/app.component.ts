@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutHorizontalComponent } from './lib/components/layouts/layout-horizontal/layout-horizontal.component';
-import { AuthService } from '@lib/services/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '@lib/services';
 
 const components = [LayoutHorizontalComponent];
 const modules = [CommonModule];
