@@ -1,0 +1,7 @@
+@if (isAuthenticated$ | async) {
+    <app-layout-horizontal>
+        <router-outlet />
+    </app-layout-horizontal>
+} @else {
+    <router-outlet />
+}
