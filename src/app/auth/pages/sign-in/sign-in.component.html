@@ -1,0 +1,64 @@
+<form
+    nz-form
+    class="mx-auto mt-16 px-6 max-w-sm"
+    [formGroup]="signInForm"
+    (ngSubmit)="handleSubmit()"
+>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+            <nz-input-group nzPrefixIcon="user">
+                <input
+                    type="text"
+                    nz-input
+                    formControlName="username"
+                    placeholder="Username"
+                />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+            <nz-input-group nzPrefixIcon="lock">
+                <input
+                    type="password"
+                    nz-input
+                    formControlName="password"
+                    placeholder="Password"
+                />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <div
+        nz-row
+        class="mb-4"
+    >
+        <div
+            nz-col
+            [nzSpan]="12"
+        >
+            <label
+                nz-checkbox
+                formControlName="remember"
+            >
+                <span>Remember me</span>
+            </label>
+        </div>
+        <div
+            nz-col
+            [nzSpan]="12"
+            class="text-right"
+        >
+            <a>Forgot password</a>
+        </div>
+    </div>
+    <button
+        nz-button
+        class="block w-full mb-4"
+        [nzType]="'primary'"
+        (click)="handleSubmit()"
+    >
+        Log in
+    </button>
+    Or
+    <a>register now!</a>
+</form>
