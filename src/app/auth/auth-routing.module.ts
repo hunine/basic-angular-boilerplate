@@ -34,7 +34,7 @@ const routes: Routes = [
 ];
 
 const MODULES = [NzFormModule, NzInputModule, NzCheckboxModule, NzButtonModule, NzGridModule, ReactiveFormsModule];
-const COMPONENTS = [SignInComponent];
+const COMPONENTS = [SignInComponent, SignUpComponent];
 
 @NgModule({
     declarations: [...COMPONENTS],

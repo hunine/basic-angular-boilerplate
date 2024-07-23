@@ -1,0 +1,131 @@
+<form
+    nz-form
+    class="mx-auto mt-16 px-6 max-w-sm"
+    [formGroup]="signUpForm"
+    (ngSubmit)="handleSubmit()"
+>
+    <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzRequired
+            nzFor="email"
+            class="text-left"
+        >
+            E-mail
+        </nz-form-label>
+        <nz-form-control
+            [nzSm]="24"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid E-mail!"
+        >
+            <input
+                nz-input
+                formControlName="email"
+                id="email"
+            />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzFor="password"
+            nzRequired
+            class="text-left"
+        >
+            Password
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Please input your password!">
+            <input
+                nz-input
+                type="password"
+                id="password"
+                formControlName="password"
+                (ngModelChange)="updateConfirmValidator()"
+            />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzFor="checkPassword"
+            nzRequired
+            class="text-left"
+        >
+            Confirm Password
+        </nz-form-label>
+        <nz-form-control [nzErrorTip]="errorTpl">
+            <input
+                nz-input
+                type="password"
+                formControlName="checkPassword"
+                id="checkPassword"
+            />
+            <ng-template
+                #errorTpl
+                let-control
+            >
+                @if (control.errors?.['required']) {
+                    Please confirm your password!
+                }
+                @if (control.errors?.['confirm']) {
+                    Two passwords that you enter is inconsistent!
+                }
+            </ng-template>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzFor="username"
+            nzRequired
+            nzTooltipTitle="What do you want other to call you"
+            class="text-left"
+        >
+            <span>username</span>
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Please input your username!">
+            <input
+                nz-input
+                id="username"
+                formControlName="username"
+            />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item
+        nz-row
+        class="register-area"
+    >
+        <nz-form-control>
+            <label
+                nz-checkbox
+                formControlName="agree"
+            >
+                <span>
+                    I have read the
+                    <a>agreement</a>
+                </span>
+            </label>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item
+        nz-row
+        class="register-area"
+    >
+        <nz-form-control
+            [nzSm]="24"
+            [nzXs]="24"
+        >
+            <button
+                nz-button
+                nzType="primary"
+                class="w-full"
+            >
+                Register
+            </button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
