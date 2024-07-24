@@ -5,11 +5,21 @@
     (ngSubmit)="handleSubmit()"
 >
     <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzRequired
+            nzFor="username"
+            class="text-left"
+        >
+            Username
+        </nz-form-label>
         <nz-form-control nzErrorTip="Please input your username!">
             <nz-input-group nzPrefixIcon="user">
                 <input
                     type="text"
                     nz-input
+                    id="username"
                     formControlName="username"
                     placeholder="Username"
                 />
@@ -17,11 +27,21 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
+        <nz-form-label
+            [nzSm]="24"
+            [nzXs]="24"
+            nzRequired
+            nzFor="password"
+            class="text-left"
+        >
+            Password
+        </nz-form-label>
         <nz-form-control nzErrorTip="Please input your Password!">
             <nz-input-group nzPrefixIcon="lock">
                 <input
                     type="password"
                     nz-input
+                    id="password"
                     formControlName="password"
                     placeholder="Password"
                 />

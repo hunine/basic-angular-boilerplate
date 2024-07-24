@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ROUTE_PATH } from '@shared/constants';
 
 @Component({
     selector: 'app-sign-up',
@@ -8,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
     signUpForm!: FormGroup;
+    ROUTE_PATH = ROUTE_PATH;
 
     constructor(private formBuilder: FormBuilder) {}
 

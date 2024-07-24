@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ROUTE_PATH } from '@shared/constants';
+import { AuthService } from 'app/auth/auth.service';
+import { SignInModel } from 'app/auth/models/auth';
 
 @Component({
     selector: 'app-sign-in',
@@ -12,7 +14,10 @@ export class SignInComponent implements OnInit {
     signInForm!: FormGroup;
     ROUTE_PATH = ROUTE_PATH;
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(
+        private formBuilder: FormBuilder,
+        private authService: AuthService,
+    ) {}
 
     ngOnInit(): void {
         this.buildForm();
@@ -28,5 +33,8 @@ export class SignInComponent implements OnInit {
 
     handleSubmit() {
         // TODO: Make API call
+
+        const signInPayload = new SignInModel(this.signInForm.getRawValue());
+        this.authService.signIn(signInPayload);
     }
 }
